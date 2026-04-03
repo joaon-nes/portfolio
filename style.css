@@ -20,6 +20,7 @@
 body {
   background: var(--bg); color: var(--text-secondary); font-family: "Figtree", system-ui, sans-serif;
   height: 100vh; display: flex; align-items: center; justify-content: center;
+  height: 100dvh;
   overflow: hidden; transition: background 0.4s ease, color 0.4s ease;
 }
 
@@ -30,7 +31,7 @@ body {
 }
 .theme-toggle:hover { transform: scale(1.1); border-color: var(--primary); color: var(--primary); }
 
-.app { width: 100%; max-width: 400px; height: 85vh; max-height: 800px; display: flex; flex-direction: column; position: relative; perspective: 20em; }
+.app { width: 100%; max-width: 400px; height: 85vh; height: 85dvh; max-height: 800px; display: flex; flex-direction: column; position: relative; perspective: 20em; }
 
 .cards-container { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; }
 
@@ -122,7 +123,9 @@ p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-b
 
 .nav {
   background-color: var(--surface); border-radius: 1.5rem; box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.1);
-  padding: 0.75em; margin: 0 1rem; border: 1px solid var(--border);
+  padding: 0.85em 0.75em;
+  margin: 0 1rem 0.5rem 1rem;
+  border: 1px solid var(--border);
   transition: background-color var(--trans-dur), box-shadow var(--trans-dur);
   transform-origin: 50% 133%;
 }
@@ -135,7 +138,7 @@ p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-b
 .nav--tilt6 { animation: tiltRight 0.6s ease-in-out; }
 
 .nav__items { display: flex; justify-content: space-between; list-style: none; }
-.nav__item-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 3.5em; height: 3.5em; text-decoration: none; color: var(--text-secondary); transition: color var(--trans-dur); text-align: center; }
+.nav__item-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 3.5em; height: 4em; text-decoration: none; color: var(--text-secondary); transition: color var(--trans-dur); text-align: center; }
 .nav__item-btn:focus, .nav__item-btn:hover, .nav__item-btn[aria-describedby=current] { color: var(--primary); }
 
 .nav__item-icon { 
