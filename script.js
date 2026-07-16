@@ -1,48 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector("[data-nav]");
-    const navButtons = document.querySelectorAll(".nav__item-btn");
-    const cards = document.querySelectorAll(".holo-card");
-    const themeToggleBtn = document.getElementById("theme-toggle");
+  const header = document.querySelector(".site-header");
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.querySelector(".main-nav");
+  const navLinks = [...document.querySelectorAll(".main-nav a")];
+  const revealItems = document.querySelectorAll(".reveal");
+  const trackedSections = [...document.querySelectorAll("main section[id]")];
+  const updateHeader = () => {
+    header.classList.toggle("scrolled", window.scrollY > 24);
+  };
 
-    const themes = ['sunset', 'sunrise', 'light', 'dark'];
-    let currentThemeIndex = 0;
-    
-    themeToggleBtn.addEventListener("click", () => {
-        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-        document.documentElement.setAttribute("data-theme", themes[currentThemeIndex]);
-    });
+  const closeMenu = () => {
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Abrir menu");
+    navigation.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  };
 
-    navButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            navButtons.forEach(b => b.removeAttribute("aria-describedby"));
-            btn.setAttribute("aria-describedby", "current");
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Abrir menu" : "Fechar menu");
+    navigation.classList.toggle("open", !isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
+  });
 
-            const index = btn.getAttribute("data-index");
-            
-            nav.classList.remove('nav--tilt1', 'nav--tilt2', 'nav--tilt3', 'nav--tilt4', 'nav--tilt5', 'nav--tilt6');
-            void nav.offsetWidth; 
-            nav.classList.add(`nav--tilt${index}`);
+  navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
-            const targetId = btn.getAttribute("data-target");
-            cards.forEach(card => {
-                card.id === targetId ? card.classList.add("active") : card.classList.remove("active");
-            });
-        });
-    });
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
 
-    cards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
-            if (!card.classList.contains("active")) return;
-            const rect = card.getBoundingClientRect();
-            const ratioX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-            const ratioY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-            card.style.setProperty("--ratio-x", ratioX);
-            card.style.setProperty("--ratio-y", ratioY);
-        });
-        card.addEventListener("mouseleave", () => {
-            card.style.setProperty("--ratio-x", 0);
-            card.style.setProperty("--ratio-y", 0);
-        });
-    });
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14 }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      const currentId = visible.target.id;
+      navLinks.forEach((link) => {
+        const targetId = link.getAttribute("href").replace("#", "");
+        link.classList.toggle("active", targetId === currentId);
+      });
+    },
+    {
+      rootMargin: "-35% 0px -50% 0px",
+      threshold: [0.05, 0.2, 0.5]
+    }
+  );
+
+  trackedSections.forEach((section) => sectionObserver.observe(section));
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) closeMenu();
+  });
 });
