@@ -701,6 +701,27 @@ h3 {
     padding: 78px 0;
   }
 
+  .profile-card {
+    padding-top: 24px;
+    overflow: hidden;
+  }
+
+  .profile-card > img {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+    border: 4px solid var(--surface);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 10px 30px rgba(45, 45, 42, 0.14);
+  }
+
+  .profile-card-body {
+    padding: 20px 24px 26px;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
