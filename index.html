@@ -1,316 +1,209 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Portfólio de João Nunes, desenvolvedor backend especializado em Java, Spring Boot, APIs REST e segurança.">
-  <meta name="theme-color" content="#0b0d0f">
-  <title>João Nunes | Desenvolvedor Backend</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de João Nunes, desenvolvedor backend Java com Spring Boot.">
+  <meta name="theme-color" content="#f6f6f4">
+  <title>João Nunes | Desenvolvedor Backend Java</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <header class="site-header" id="topo">
-    <a class="brand" href="#inicio" aria-label="Voltar ao início">
-      <span class="brand-mark">JN</span>
-      <span class="brand-text">João Nunes</span>
-    </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Ir ao início">JN</a>
 
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-      <span></span>
-      <span></span>
-    </button>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#formacao">Formação</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#formacao">Formação</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+      <button class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">☼</span>
+      </button>
+    </div>
   </header>
 
   <main id="conteudo">
-    <section class="module parallax hero" id="inicio" aria-labelledby="hero-title">
-      <div class="parallax-shade"></div>
-      <div class="hero-grid" aria-hidden="true"></div>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Desenvolvedor Backend Java</p>
+          <h1>João Nunes</h1>
+          <p class="hero-summary">
+            Estudante de Ciência da Computação com experiência prática no desenvolvimento de aplicações backend e full stack usando Java, Spring Boot e bancos de dados relacionais.
+          </p>
+          <p class="hero-detail">
+            Desenvolvo APIs REST, autenticação e controle de acesso, integrações com serviços externos e regras de negócio.
+          </p>
 
-      <div class="hero-content reveal">
-        <div class="hero-photo-wrap">
-          <img class="hero-photo" src="./assets/joao-nunes.webp" alt="João Nunes" width="400" height="400">
-          <span class="availability"><span></span> Disponível para oportunidades</span>
+          <!-- <div class="hero-actions" aria-label="Links principais"> -->
+            <!-- <a class="button button-primary" href="#projetos">Ver projetos</a> -->
+            <!-- <a class="button button-secondary" href="#contato">Entrar em contato</a> -->
+          <!-- </div> -->
+
+          <ul class="quick-info" aria-label="Informações rápidas">
+            <li>Porto Alegre, RS</li>
+            <li>Disponível para novas oportunidades backend Java, C++</li>
+            <li>Inglês intermediário para leitura técnica</li>
+          </ul>
         </div>
 
-        <p class="eyebrow">BACKEND · JAVA · SPRING BOOT</p>
-        <h1 id="hero-title">Eu transformo regras de negócio em <span>software seguro e escalável.</span></h1>
-        <p class="hero-description">
-          Sou João Nunes, desenvolvedor backend e estudante de Ciência da Computação, com foco em APIs REST,
-          autenticação, persistência de dados e integração de sistemas.
-        </p>
+        <div class="profile-card" aria-label="Perfil profissional">
+          <img src="./assets/joao-nunes.webp" alt="Foto de perfil de João Nunes" width="260" height="260" decoding="async" fetchpriority="high">
+          <div class="profile-card-body">
+            <span class="status"><span aria-hidden="true"></span> Foco atual</span>
+            <strong>Backend com Java e Spring Boot</strong>
+            <p>Interesses em segurança de aplicações, arquitetura de software, testes automatizados e computação em nuvem.</p>
+          </div>
+        </div>
       </div>
-
-      <a class="scroll-hint" href="#sobre" aria-label="Rolar para a próxima seção">
-        <span>Explore</span>
-        <i class="fa-solid fa-arrow-down-long"></i>
-      </a>
     </section>
 
-    <section class="module content" id="sobre">
-      <div class="container reveal">
+    <section class="section" id="projetos" aria-labelledby="titulo-projetos">
+      <div class="container">
         <div class="section-heading">
-          <span class="section-number">01</span>
-          <div>
-            <p class="eyebrow">PERFIL PROFISSIONAL</p>
-            <h2>Backend como base. Visão de produto como direção.</h2>
-          </div>
+          <p class="eyebrow">Experiência prática</p>
+          <h2 id="titulo-projetos">Projetos em destaque</h2>
+          <p>Aplicações desenvolvidas para consolidar conhecimentos de backend, segurança, integrações e modelagem de dados.</p>
         </div>
 
-        <div class="about-layout">
-          <div class="lead-copy">
-            <p>
-              Especializado no ecossistema Java e Spring Boot, desenvolvo soluções orientadas a regras de negócio,
-              segurança e manutenção de longo prazo.
-            </p>
-            <p>
-              Busco ampliar minha atuação para o ciclo completo do software, aprofundando conhecimentos em
-              Cybersegurança, DevSecOps, Cloud, arquitetura de microserviços e IA Engineering.
-            </p>
-          </div>
+        <div class="project-grid">
+          <article class="project-card project-card-featured">
+            <div class="project-topline">
+              <span class="project-type">Full Stack · Mar 2026 — atual</span>
+              <a href="https://github.com/joaon-nes/barbearia-api" target="_blank" rel="noopener" aria-label="Abrir código do sistema de barbearias no GitHub">Código ↗</a>
+            </div>
+            <h3>Sistema Web para Gestão e Agendamentos de Barbearias</h3>
+            <p class="project-description">Aplicação para gestão de estabelecimentos, profissionais, clientes, serviços e agendamentos.</p>
+            <ul class="project-highlights">
+              <li>Autenticação e autorização com Spring Security, JWT e 2FA, além de proteção contra força bruta, CORS e CSP.</li>
+              <li>Cálculo de disponibilidade e prevenção de conflitos de horários com controle transacional.</li>
+              <li>Pagamentos via Pix e cartão com AbacatePay e processamento assíncrono de webhooks.</li>
+              <li>Geolocalização com ViaCEP, OpenStreetMap/Nominatim e mapas com Leaflet.</li>
+            </ul>
+            <div class="tech-list" aria-label="Tecnologias do projeto">
+              <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>MySQL</span><span>Flyway</span><span>Thymeleaf</span>
+            </div>
+          </article>
 
-          <div class="skill-columns">
-            <article class="info-card">
-              <span class="card-icon"><i class="fa-solid fa-code"></i></span>
-              <h3>Hard Skills</h3>
-              <ul class="clean-list">
-                <li>Java e Spring Boot</li>
-                <li>Spring MVC e Spring Security</li>
-                <li>MySQL, JPA e Hibernate</li>
-                <li>JWT, Webhooks e APIs REST</li>
-                <li>JavaScript, HTML5 e CSS3</li>
-                <li>Arquitetura MVC e POO</li>
-              </ul>
-            </article>
-
-            <article class="info-card">
-              <span class="card-icon"><i class="fa-solid fa-brain"></i></span>
-              <h3>Competências</h3>
-              <div class="tags">
-                <span>Autogestão</span>
-                <span>Aprendizado contínuo</span>
-                <span>Resolução de problemas</span>
-                <span>Pensamento analítico</span>
-                <span>Comunicação assertiva</span>
-                <span>Adaptabilidade</span>
-                <span>Inglês intermediário</span>
-              </div>
-            </article>
-          </div>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="project-type">Backend · Abr 2026 — atual</span>
+              <a href="https://github.com/joaon-nes/oficina-api" target="_blank" rel="noopener" aria-label="Abrir código da API de oficina no GitHub">Código ↗</a>
+            </div>
+            <h3>API de Gerenciamento para Oficina Mecânica</h3>
+            <p class="project-description">API REST para gerenciar clientes, veículos, ordens de serviço e histórico de manutenções.</p>
+            <ul class="project-highlights">
+              <li>Modelagem de entidades e relacionamentos do domínio de oficinas mecânicas.</li>
+              <li>Arquitetura em camadas para separar regras de negócio, persistência e endpoints.</li>
+              <li>Integração com a Tabela FIPE para consultar e validar dados automotivos.</li>
+              <li>Persistência com Spring Data JPA e Hibernate.</li>
+            </ul>
+            <div class="tech-list" aria-label="Tecnologias do projeto">
+              <span>Java</span><span>Spring Boot</span><span>Spring Data JPA</span><span>Hibernate</span><span>API REST</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="module parallax statement statement-education" id="formacao" aria-labelledby="education-title">
-      <div class="parallax-shade"></div>
-      <div class="statement-content reveal">
-        <p class="eyebrow">FORMAÇÃO CONTÍNUA</p>
-        <h2 id="education-title">Aprender, aplicar e evoluir.</h2>
-        <p>Conhecimento técnico ganha valor quando é convertido em soluções reais.</p>
-      </div>
-    </section>
-
-    <section class="module content content-alt" id="experiencia">
-      <div class="container reveal">
+    <section class="section section-muted" id="habilidades" aria-labelledby="titulo-habilidades">
+      <div class="container">
         <div class="section-heading">
-          <span class="section-number">02</span>
-          <div>
-            <p class="eyebrow">TRAJETÓRIA</p>
-            <h2>Formação e experiência prática.</h2>
-          </div>
+          <p class="eyebrow">Stack</p>
+          <h2 id="titulo-habilidades">Habilidades técnicas</h2>
+          <p>Organizadas por contexto de uso para facilitar a leitura por recrutadores e pessoas desenvolvedoras.</p>
         </div>
 
-        <div class="trajectory-grid">
-          <div>
-            <h3 class="column-title">Formação</h3>
-            <div class="timeline">
-              <article class="timeline-item">
-                <span class="timeline-date">2023 — cursando</span>
-                <h4>Ciência da Computação</h4>
-                <p>UniRitter · Porto Alegre</p>
-              </article>
-              <article class="timeline-item">
-                <span class="timeline-date">2025 — cursando</span>
-                <h4>Técnico em Desenvolvimento de Sistemas</h4>
-                <p>Senac Tech · Porto Alegre</p>
-              </article>
-              <article class="timeline-item">
-                <span class="timeline-date">2017 — 2019</span>
-                <h4>Técnico em Informática</h4>
-                <p>Senac Tech · Porto Alegre</p>
-              </article>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="column-title">Experiência em projetos</h3>
-            <div class="experience-stack">
-              <article class="experience-card">
-                <div class="experience-meta">
-                  <span>Mar 2026 — atual</span>
-                  <span>Remoto</span>
-                </div>
-                <h4>Desenvolvedor Backend</h4>
-                <p class="experience-project">API de Agendamentos para Barbearia</p>
-                <ul>
-                  <li>API RESTful desenvolvida com Java e Spring Boot.</li>
-                  <li>Autenticação JWT e controle de acesso com Spring Security.</li>
-                  <li>Pagamentos via Pix/cartão e atualização assíncrona por Webhooks.</li>
-                  <li>Regras de disponibilidade para impedir conflitos de horários.</li>
-                  <li>Persistência com MySQL, Spring Data JPA e Hibernate.</li>
-                </ul>
-              </article>
-
-              <article class="experience-card">
-                <div class="experience-meta">
-                  <span>Fev 2026</span>
-                  <span>Remoto</span>
-                </div>
-                <h4>Desenvolvedor Fullstack</h4>
-                <p class="experience-project">Aplicação Web inspirada no Tibia</p>
-                <ul>
-                  <li>Backend com Java, Spring MVC e Spring Security.</li>
-                  <li>Interface responsiva com HTML5, CSS, Bootstrap e JavaScript.</li>
-                  <li>Modelagem e integração com banco de dados MySQL.</li>
-                </ul>
-              </article>
-            </div>
-          </div>
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Backend</h3>
+            <p>Java, C++, Spring Boot, Spring MVC, Spring Security, Spring Data JPA, Hibernate, JWT, Maven e APIs REST.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Banco de dados</h3>
+            <p>MySQL, MariaDB, modelagem relacional, persistência ORM e versionamento de schema com Flyway.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Frontend</h3>
+            <p>JavaScript, HTML5, CSS3, Bootstrap 5, Thymeleaf e Leaflet.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Segurança e integrações</h3>
+            <p>Autenticação, autorização, 2FA, perfis de acesso, variáveis de ambiente, CORS, CSP, ViaCEP, Nominatim, AbacatePay (gateway de pagamentos) e JavaMailSender.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Ferramentas</h3>
+            <p>Git, GitHub, Visual Studio Code, MySQL Workbench e Postman.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Fundamentos</h3>
+            <p>Orientação a Objetos, arquitetura em camadas, MVC, validação de dados, controle transacional e boas práticas de backend.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="module parallax statement statement-projects" id="projetos" aria-labelledby="projects-title">
-      <div class="parallax-shade"></div>
-      <div class="statement-content reveal">
-        <p class="eyebrow">CÓDIGO EM PRODUÇÃO</p>
-        <h2 id="projects-title">Projetos que resolvem problemas.</h2>
-        <p>Arquitetura, regras de negócio e integração reunidas em aplicações reais.</p>
+    <section class="section" id="formacao" aria-labelledby="titulo-formacao">
+      <div class="container education-layout">
+        <div class="section-heading education-intro">
+          <p class="eyebrow">Formação</p>
+          <h2 id="titulo-formacao">Base acadêmica</h2>
+          <p>Formação superior em andamento, complementada por cursos técnicos voltados à prática de desenvolvimento e infraestrutura.</p>
+        </div>
+
+        <ol class="timeline">
+          <li>
+            <div class="timeline-date">Jun 2023 — Jul 2027</div>
+            <h3>Bacharelado em Ciência da Computação</h3>
+            <p>Centro Universitário Ritter dos Reis · Porto Alegre, RS</p>
+          </li>
+          <li>
+            <div class="timeline-date">Ago 2025 — Jul 2027</div>
+            <h3>Técnico em Desenvolvimento de Sistemas</h3>
+            <p>Senac Tech · Porto Alegre, RS</p>
+          </li>
+          <li>
+            <div class="timeline-date">Set 2017 — Mai 2019</div>
+            <h3>Técnico em Informática</h3>
+            <p>Senac Tech · Porto Alegre, RS</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="module content projects-section">
-      <div class="container reveal">
-        <div class="section-heading">
-          <span class="section-number">03</span>
-          <div>
-            <p class="eyebrow">PORTFÓLIO TÉCNICO</p>
-            <h2>Trabalhos selecionados.</h2>
-          </div>
+    <section class="contact-section" id="contato" aria-labelledby="titulo-contato">
+      <div class="container contact-card">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2 id="titulo-contato">Vamos conversar sobre desenvolvimento backend?</h2>
+          <p>Para oportunidades, dúvidas sobre os projetos ou networking, utilize um dos canais abaixo. Meu currículo está disponível em PDF.</p>
         </div>
-
-        <div class="projects-grid">
-          <a class="project-card project-featured" href="https://github.com/joaon-nes/oficina-api" target="_blank" rel="noopener noreferrer">
-            <div class="project-topline">
-              <span>01 · API + FRONTEND</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </div>
-            <h3>Oficina API</h3>
-            <p>Gestão de ordens de serviço, clientes e catalogação automatizada de veículos.</p>
-            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>React</span><span>Tailwind</span></div>
-          </a>
-
-          <a class="project-card" href="https://github.com/joaon-nes/barbearia-api" target="_blank" rel="noopener noreferrer">
-            <div class="project-topline">
-              <span>02 · BACKEND</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </div>
-            <h3>API Barbearia</h3>
-            <p>Plataforma de agendamentos, autenticação e processamento de pagamentos.</p>
-            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>JWT</span><span>MySQL</span></div>
-          </a>
-
-          <a class="project-card" href="https://github.com/joaon-nes/senac-tech" target="_blank" rel="noopener noreferrer">
-            <div class="project-topline">
-              <span>03 · ACADÊMICO</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </div>
-            <h3>Desenvolvimento Acadêmico</h3>
-            <p>Projetos e atividades práticas produzidos durante minha formação técnica.</p>
-            <div class="project-tech"><span>Java</span><span>MySQL</span><span>POO</span></div>
-          </a>
-
-          <a class="project-card" href="https://github.com/joaon-nes/tibia" target="_blank" rel="noopener noreferrer">
-            <div class="project-topline">
-              <span>04 · FULLSTACK</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </div>
-            <h3>App Tibia Web</h3>
-            <p>Plataforma web fullstack inspirada no universo do jogo Tibia.</p>
-            <div class="project-tech"><span>Java</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
-          </a>
-        </div>
-
-        <a class="text-link" href="https://github.com/joaon-nes?tab=repositories" target="_blank" rel="noopener noreferrer">
-          Ver todos os repositórios <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-    </section>
-
-    <section class="module parallax statement statement-future" id="objetivos" aria-labelledby="future-title">
-      <div class="parallax-shade"></div>
-      <div class="statement-content reveal">
-        <p class="eyebrow">PRÓXIMO NÍVEL</p>
-        <h2 id="future-title">Evolução tecnológica contínua.</h2>
-        <p>Segurança, automação, nuvem e arquitetura para construir sistemas mais maduros.</p>
-      </div>
-    </section>
-
-    <section class="module content contact-section" id="contato">
-      <div class="container reveal">
-        <div class="section-heading">
-          <span class="section-number">04</span>
-          <div>
-            <p class="eyebrow">OBJETIVOS E CONTATO</p>
-            <h2>Vamos construir algo relevante.</h2>
-          </div>
-        </div>
-
-        <div class="contact-layout">
-          <div>
-            <p class="contact-lead">
-              Procuro oportunidades em que eu possa contribuir com desenvolvimento backend e continuar evoluindo
-              em segurança, DevOps, Cloud, inteligência artificial e arquitetura de software.
-            </p>
-
-            <div class="focus-grid">
-              <article><i class="fa-solid fa-shield-halved"></i><span>Cybersegurança e DevSecOps</span></article>
-              <article><i class="fa-solid fa-cloud"></i><span>Cloud e CI/CD</span></article>
-              <article><i class="fa-solid fa-robot"></i><span>IA aplicada a sistemas</span></article>
-              <article><i class="fa-solid fa-diagram-project"></i><span>Arquitetura de software</span></article>
-            </div>
-          </div>
-
-          <aside class="contact-card">
-            <p class="eyebrow">FALE COMIGO</p>
-            <a href="mailto:joaon_nes@outlook.com"><i class="fa-regular fa-envelope"></i> joaon_nes@outlook.com</a>
-            <a href="https://wa.me/5551999401869" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> (51) 99940-1869</a>
-            <a href="https://linkedin.com/in/joaon-nes" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://github.com/joaon-nes" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://instagram.com/joaon_nes" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
-          </aside>
-        </div>
-
         <div class="contact-actions">
-          <a class="back-to-top" href="#inicio">Voltar ao topo <i class="fa-solid fa-arrow-up"></i></a>
+          <a class="button button-primary" href="./curriculo-joao-nunes.pdf" target="_blank" rel="noopener">Ver currículo</a>
+          <a class="button button-secondary" href="mailto:joaon_nes@outlook.com">Enviar e-mail</a>
+          <a class="text-link" href="https://linkedin.com/in/joaon-nes" target="_blank" rel="noopener">linkedin.com/in/joaon-nes ↗</a>
+          <a class="text-link" href="https://github.com/joaon-nes" target="_blank" rel="noopener">github.com/joaon-nes ↗</a>
         </div>
       </div>
     </section>
   </main>
-  <script src="./script.js" defer></script>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><!-- ©  <span id="current-year"></span> João Nunes --></p>
+      <a href="#inicio">Voltar ao início ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
