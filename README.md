@@ -4,11 +4,12 @@ Portfólio estático alinhado ao currículo, desenvolvido com HTML, CSS e JavaSc
 
 ## Estrutura adotada
 
-1. Perfil profissional
-2. Projetos em destaque, que também representam a experiência prática
-3. Habilidades técnicas agrupadas por contexto
-4. Formação acadêmica
-5. Contato e currículo
+1. Perfil profissional e posicionamento
+2. Serviços de desenvolvimento, sites, SaaS e suporte técnico
+3. Projetos em destaque, que também representam a experiência prática
+4. Habilidades técnicas agrupadas por contexto
+5. Formação acadêmica
+6. Contato, orçamento e currículo
 
 ## Arquivos
 
